@@ -4,5 +4,8 @@
 
 # SBT
 .bsp/*
-target/
-project/target/
+target/*
+project/target/*
+project/project/*
+project/metals.sbt
+project/.bloop/*
