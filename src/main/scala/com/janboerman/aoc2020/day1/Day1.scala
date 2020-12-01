@@ -3,8 +3,8 @@ package com.janboerman.aoc2020.day1
 import scala.collection.mutable
 import scala.io.Source;
 
-val fileName = "src/main/resources/day1input.txt"
-val numbers = Source.fromFile(fileName).getLines().map(_.toInt).toArray
+val source = Source.fromResource("day1input.txt")
+val numbers = source.getLines().map(_.toInt).toArray
 
 @main def main: Unit = {
     
@@ -24,7 +24,6 @@ val numbers = Source.fromFile(fileName).getLines().map(_.toInt).toArray
                     result2 = n*o*p
                 }
             }
-
         }
     }
     
