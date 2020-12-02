@@ -10,16 +10,14 @@ val entries = source.getLines().map { line =>
 } .toList
 
 @main def main: Unit = {
-    val result1 = entries.count { entry =>
-        val (min, max) = entry.numbers
-        val count = entry.password.count(_ == entry.character)
+    val result1 = entries.count { case Entry((min, max), character, password) =>
+        val count = password.count(_ == character)
         min <= count && count <= max
     }
     println(result1)
     
-    val result2 = entries.count { entry =>
-        val (occ1, occ2) = entry.numbers
-        (entry.password.charAt(occ1 - 1) == entry.character) != (entry.password.charAt(occ2 - 1) == entry.character)
+    val result2 = entries.count { case Entry((occ1, occ2), character, password) =>
+        (password.charAt(occ1 - 1) == character) != (password.charAt(occ2 - 1) == character)
     }
     println(result2)
 }
