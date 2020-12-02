@@ -4,9 +4,7 @@ lazy val root = project
   .in(file("."))
   .settings(
     name := "AdventOfCode2020",
-    version := "0.0",
+    version := "0.1",
 
     scalaVersion := dottyVersion,
-
-    libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test"
   )

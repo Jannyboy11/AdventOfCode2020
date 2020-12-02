@@ -15,17 +15,20 @@ val numbers = source.getLines().map(_.toInt).toArray
         for (o <- numbers) {
             val sum1 = n + o
             if (sum1 == 2020) {
-                result1 = n*o
+                result1 = n * o
             }
-            
+
             for (p <- numbers) {
                 val sum2 = n + o + p
                 if (sum2 == 2020) {
-                    result2 = n*o*p
+                    result2 = n * o * p
                 }
             }
         }
     }
+    
+    assert(result1 != -1)
+    assert(result1 != -1)
     
     println(result1)
     println(result2)
