@@ -1,4 +1,5 @@
-package com.janboerman.aoc2020.day2
+package com.janboerman.aoc2020
+package day2
 
 import scala.io.Source
 

@@ -1,6 +1,6 @@
-package com.janboerman.aoc2020.day1
+package com.janboerman.aoc2020
+package day1
 
-import scala.collection.mutable
 import scala.io.Source;
 
 val source = Source.fromResource("day1input.txt")
@@ -27,11 +27,7 @@ val numbers = source.getLines().map(_.toInt).toArray
         }
     }
     
-    assert(result1 != -1)
-    assert(result1 != -1)
-    
     println(result1)
     println(result2)
 
 }
-
