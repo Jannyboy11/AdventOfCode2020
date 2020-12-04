@@ -14,7 +14,6 @@ type Cid = "cid";
 type Hgt = "hgt";
 type Key = Ecl | Pid | Eyr | Hcl | Byr | Iyr | Cid | Hgt
 type Value = String
-def the[T](using v: ValueOf[T]): T = v.value
 
 val source = Source.fromResource("day4input.txt")
 val passports = {
@@ -37,17 +36,17 @@ val passports = {
 }
 
 def isValid1(passport: mutable.Map[Key, Value]): Boolean = {
-    passport.contains(the[Ecl])
-        && passport.contains(the[Pid])
-        && passport.contains(the[Eyr])
-        && passport.contains(the[Hcl])
-        && passport.contains(the[Byr])
-        && passport.contains(the[Iyr])
-        && passport.contains(the[Hgt])
+    passport.contains(valueOf[Ecl])
+        && passport.contains(valueOf[Pid])
+        && passport.contains(valueOf[Eyr])
+        && passport.contains(valueOf[Hcl])
+        && passport.contains(valueOf[Byr])
+        && passport.contains(valueOf[Iyr])
+        && passport.contains(valueOf[Hgt])
 }
 
 def isValid2(passport: mutable.Map[Key, Value]): Boolean = {
-    passport.get(the[Byr]) match {
+    passport.get(valueOf[Byr]) match {
         case None => return false
         case Some(byr) =>
             if (byr.matches("\\d{4}")) {
@@ -56,7 +55,7 @@ def isValid2(passport: mutable.Map[Key, Value]): Boolean = {
             } else return false
     }
     
-    passport.get(the[Iyr]) match {
+    passport.get(valueOf[Iyr]) match {
         case None => return false
         case Some(iyr) =>
             if (iyr.matches("\\d{4}")) {
@@ -65,7 +64,7 @@ def isValid2(passport: mutable.Map[Key, Value]): Boolean = {
             } else return false
     }
 
-    passport.get(the[Eyr]) match {
+    passport.get(valueOf[Eyr]) match {
         case None => return false
         case Some(eyr) =>
             if (eyr.matches("\\d{4}")) {
@@ -74,7 +73,7 @@ def isValid2(passport: mutable.Map[Key, Value]): Boolean = {
             } else return false
     }
     
-    passport.get(the[Hgt]) match {
+    passport.get(valueOf[Hgt]) match {
         case None => return false
         case Some(hgt) =>
             if (hgt.matches("\\d+cm")) {
@@ -86,20 +85,20 @@ def isValid2(passport: mutable.Map[Key, Value]): Boolean = {
             } else return false
     }
     
-    passport.get(the[Hcl]) match {
+    passport.get(valueOf[Hcl]) match {
         case None => return false
         case Some(hcl) =>
             if (!hcl.matches("#[0-9a-f]{6}")) return false
     }
     
-    passport.get(the[Ecl]) match {
+    passport.get(valueOf[Ecl]) match {
         case None => return false
         case Some(ecl) =>
             if (!(ecl == "amb" || ecl == "blu" || ecl == "brn" || ecl == "gry" || ecl == "grn" || ecl == "hzl" || ecl == "oth"))
                 return false
     }
     
-    passport.get(the[Pid]) match {
+    passport.get(valueOf[Pid]) match {
         case None => return false
         case Some(pid) =>
             if (!pid.matches("\\d{9}")) return false
