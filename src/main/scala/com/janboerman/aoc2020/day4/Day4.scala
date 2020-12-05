@@ -4,14 +4,14 @@ package day4
 import scala.io.Source;
 import scala.collection.mutable
 
-type Ecl = "ecl";
-type Pid = "pid";
-type Eyr = "eyr";
-type Hcl = "hcl";
-type Byr = "byr";
-type Iyr = "iyr";
-type Cid = "cid";
-type Hgt = "hgt";
+type Ecl = "ecl"
+type Pid = "pid"
+type Eyr = "eyr"
+type Hcl = "hcl"
+type Byr = "byr"
+type Iyr = "iyr"
+type Cid = "cid"
+type Hgt = "hgt"
 type Key = Ecl | Pid | Eyr | Hcl | Byr | Iyr | Cid | Hgt
 type Value = String
 
