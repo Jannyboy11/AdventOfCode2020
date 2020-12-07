@@ -93,17 +93,11 @@ object Day7 {
         }
 
         def getContainedBags(count: BigInt, bag: Bag): BigInt = countMap.get(bag) match {
-            case Some(innerMap) if !innerMap.isEmpty =>
-                count + innerMap
-                    .map { case (innerBag, innerCount) => 
-                        val amountInner = innerCount * count
-                        getContainedBags(amountInner, innerBag)
-                    }
-                    .sum
+            case Some(innerMap) => count + count * innerMap.map { case (innerBag, innerCount) => getContainedBags(innerCount, innerBag) } .sum
             case _ => count
         }
 
-        val result2 = getContainedBags(BigInt(1), myBag) - BigInt(1) /*discourn the shiny gold bag itself*/
+        val result2 = getContainedBags(BigInt(1), myBag) - BigInt(1) /*disregard the shiny gold bag itself*/
         println(result2)
     }
 }
