@@ -21,11 +21,11 @@ val groups = {
 }
 
 object Day6 {
-    
+
     def main(args: Array[String]): Unit = {
         val result1 = groups.map(_.flatten.toSet.size).sum
         println(result1)
-        
+
         val result2 = groups.map(answers => ('a' to 'z').count(c => answers.forall(_.contains(c)))).sum
         println(result2)
     }
