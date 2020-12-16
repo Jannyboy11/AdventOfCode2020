@@ -47,8 +47,8 @@ object Day10 {
     
     def combinations(input: Int, adapters: SortedSet[Int], cache: mutable.Map[Int, Long]): Long = {
         cache.get(input) match {
-            case Some(combinations) => return combinations
-            case _ =>
+            case Some(combinations) => combinations
+            case None =>
                 var comb = 0L
                 for (i <- 1 to 3) {
                     if (adapters(input + i)) {
