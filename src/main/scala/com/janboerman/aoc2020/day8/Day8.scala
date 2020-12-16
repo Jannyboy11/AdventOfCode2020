@@ -22,9 +22,9 @@ val source = Source.fromResource("day8input.txt")
 val inputProg: Program = source.getLines().map { line =>
     val Array(opCode, operand) = line.split(" ")
     val oc = opCode match {
-        case "nop" => Nop;
-        case "acc" => Acc;
-        case "jmp" => Jmp;
+        case "nop" => Nop
+        case "acc" => Acc
+        case "jmp" => Jmp
     }
     val action = operand(0) match {
         case '+' => Plus
@@ -38,15 +38,8 @@ object Day8 {
 
     def main(args: Array[String]): Unit = {
         val result1 = {
-            val visitedInstructions = new mutable.HashSet[Int]
-
-            var computer: Computer = Computer.apply(inputProg)
-            var lastAcc = 0
-            while (visitedInstructions.add(computer.instructionPointer)) {
-                lastAcc = computer.accumulator
-                computer = computer.step()
-            }
-            lastAcc
+            val (false, acc) = terminates(inputProg)
+            acc
         }
         println(result1)
         
