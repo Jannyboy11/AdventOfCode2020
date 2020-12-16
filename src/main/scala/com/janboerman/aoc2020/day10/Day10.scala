@@ -36,24 +36,27 @@ object Day10 {
         }
         println(result1)
         
-        val result2 = combinations(0, SortedSet.from(jolts), new mutable.HashMap())
+        val result2 = {
+            val adapters = SortedSet.from(jolts)
+            val combinationsCache = new mutable.HashMap[Int, Long]()
+            combinationsCache.put(adapters.last, 1L)    //there is only one combination possible for the last adapter.
+            combinations(0, adapters, combinationsCache)
+        }
         println(result2)
     }
     
-    def combinations(input: Int, adapters: SortedSet[Int], memory: mutable.Map[Int, Long]): Long = {
-        memory.get(input) match {
+    def combinations(input: Int, adapters: SortedSet[Int], cache: mutable.Map[Int, Long]): Long = {
+        cache.get(input) match {
             case Some(combinations) => return combinations
             case _ =>
                 var comb = 0L
                 for (i <- 1 to 3) {
                     if (adapters(input + i)) {
-                        comb += combinations(input + i, adapters, memory)
+                        comb += combinations(input + i, adapters, cache)
                     }
                 }
-                
-                if (comb == 0L) comb = 1L   //needed for the 'highest' adapter
 
-                memory.put(input, comb)
+                cache.put(input, comb)
                 comb
         }
     }
