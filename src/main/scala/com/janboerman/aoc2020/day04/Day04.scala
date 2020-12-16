@@ -1,5 +1,5 @@
 package com.janboerman.aoc2020
-package day4
+package day04
 
 import scala.io.Source;
 import scala.collection.mutable
@@ -15,7 +15,7 @@ type Hgt = "hgt"
 type Key = Ecl | Pid | Eyr | Hcl | Byr | Iyr | Cid | Hgt
 type Value = String
 
-val source = Source.fromResource("day4input.txt")
+val source = Source.fromResource("day04input.txt")
 val passports = {
     val list = new mutable.ListBuffer[mutable.Map[Key, Value]]
     var passport = new mutable.HashMap[Key, Value]()

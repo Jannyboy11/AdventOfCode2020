@@ -1,9 +1,9 @@
-package com.janboerman.aoc2020.day9
+package com.janboerman.aoc2020.day09
 
 import scala.collection.mutable
 import scala.io.Source
 
-val source = Source.fromResource("day9input.txt")
+val source = Source.fromResource("day09input.txt")
 val numbers = source.getLines().map(_.toLong).toIndexedSeq
 
 object Day9 {

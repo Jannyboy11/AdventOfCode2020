@@ -1,9 +1,9 @@
 package com.janboerman.aoc2020
-package day1
+package day01
 
 import scala.io.Source;
 
-val source = Source.fromResource("day1input.txt")
+val source = Source.fromResource("day01input.txt")
 val numbers = source.getLines().map(_.toInt).toArray
 
 @main def main: Unit = {

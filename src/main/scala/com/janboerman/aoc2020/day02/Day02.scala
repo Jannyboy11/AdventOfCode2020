@@ -1,9 +1,9 @@
 package com.janboerman.aoc2020
-package day2
+package day02
 
 import scala.io.Source
 
-val source = Source.fromResource("day2input.txt")
+val source = Source.fromResource("day02input.txt")
 val entries = source.getLines().map { line =>
     val Array(pred, c, pw) = line.split(" ", 3)
     val Array(min, max) = pred.split("-", 2)

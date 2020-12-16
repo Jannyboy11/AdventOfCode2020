@@ -1,4 +1,4 @@
-package com.janboerman.aoc2020.day8
+package com.janboerman.aoc2020.day08
 
 import scala.io.Source
 import scala.collection.mutable
@@ -18,7 +18,7 @@ enum Action {
 import OpCode._
 import Action._
 
-val source = Source.fromResource("day8input.txt")
+val source = Source.fromResource("day08input.txt")
 val inputProg: Program = source.getLines().map { line =>
     val Array(opCode, operand) = line.split(" ")
     val oc = opCode match {

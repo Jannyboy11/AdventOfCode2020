@@ -1,5 +1,5 @@
 package com.janboerman.aoc2020
-package day3
+package day03
 
 import scala.io.Source
 
@@ -15,7 +15,7 @@ extension (g: Grid)
     def width: Int = g(0).size
     def depth: Int = g.size
 
-val source = Source.fromResource("day3input.txt")
+val source = Source.fromResource("day03input.txt")
 val grid: Grid = source.getLines().map(line => line.map {
     case '.' => Empty
     case '#' => Tree

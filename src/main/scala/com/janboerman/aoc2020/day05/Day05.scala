@@ -1,9 +1,9 @@
 package com.janboerman.aoc2020
-package day5
+package day05
 
 import scala.io.Source;
 
-val source = Source.fromResource("day5input.txt")
+val source = Source.fromResource("day05input.txt")
 val seatIDs = source.getLines().map(toSeatID).toSet
 
 def toSeatID(line: String): Int = {
@@ -30,7 +30,7 @@ def toSeatID(line: String): Int = {
     lowerRow * 8 + lowerColumn
 }
 
-object Day5 {
+object Day05 {
     //for some weird reason, it's a compiler error if I define the main function at the top level annotated with @main o.0
     /* [error] -- [E007] Type Mismatch Error: C:\Users\Test\Projects\Scala\AdventOfCode2020\src\main\scala\com\janboerman\aoc2020\day5\Day5.scala:33:0
      * [error] 33 |@main def main: Unit = {

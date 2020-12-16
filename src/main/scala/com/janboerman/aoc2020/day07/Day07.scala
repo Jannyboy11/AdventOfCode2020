@@ -1,4 +1,4 @@
-package com.janboerman.aoc2020.day7
+package com.janboerman.aoc2020.day07
 
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
@@ -7,7 +7,7 @@ import scala.io.Source
 type Tone = String
 type Colour = String
 
-val source = Source.fromResource("day7input.txt")
+val source = Source.fromResource("day07input.txt")
 val rules = source.getLines().map { line =>
     if (line.isEmpty) {
         Rule(Bag("", ""), Set[(Int, Bag)]())
